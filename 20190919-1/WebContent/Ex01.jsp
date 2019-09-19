@@ -8,25 +8,32 @@
 </head>
 <body>
 	<h2>구구단 출력</h2>
-	
-	<table border="1">
-	<tr>
-	<%
-		for (int dan = 2; dan < 10; dan++) {	
-	%>
-	</tr>
-	<th><%=dan %>단</th>
+
+	<table border="1" width="100%">
+		<tr align="center">
+			<%
+				for (int dan = 2; dan < 10; dan++) {
+			%>
+			<th width="100"><%=dan%>단</th>
+			<%
+				}
+			%>
+		</tr>
 		<%
-			for (int i = 1 ; i < 10; i++) {
+			for (int i = 0; i < 9; i++) {
 		%>
-			<td><%= (dan + " * " + i + " = " + dan*i) %></td>
+		<tr align="center">
+			<%
+				for (int j = 0; j < 8; j++) {
+			%>
+			<td><%= j+2 %> * <%= i+1 %> = <%= (j+2) * (i+1) %></td>
+			<%
+				}
+			%>
+		</tr>
 		<%
 			}
 		%>
-		</tr>
-	<%
-		}
-	%>
 	</table>
 
 </body>
